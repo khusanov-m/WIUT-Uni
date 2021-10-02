@@ -1,0 +1,247 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/* CSS of header */
+
+header {
+  background: url(../img/image11.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 420px;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 70px;
+  position: relative;
+}
+
+.team-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.header-container,
+.team-container,
+.footer-container {
+  text-align: center;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+}
+
+.arrow_left,
+.arrow_right {
+  width: 21px;
+  height: 40px;
+}
+
+.header-text {
+  color: #fff;
+  max-width: 650px;
+  align-items: center;
+  margin: 0 auto;
+  letter-spacing: 1px;
+}
+
+.header-text h3 {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.5em;
+}
+
+.header-text p {
+  display: block;
+  margin-top: 25px;
+}
+
+/* CSS of team section */
+
+.team {
+  margin-top: 100px;
+}
+
+.team-container span,
+.footer-container span {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 1.5em;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.team-container span p,
+.footer-container span p {
+  color: #ff8c00;
+  margin-left: 5px;
+}
+
+.team-desc {
+  max-width: 350px;
+  margin: 0 auto;
+  font-family: sans-serif;
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.7em;
+}
+
+/* Sliders style properties */
+
+.slider {
+  margin: 0 auto;
+  padding-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  color: grey;
+  margin-bottom: 70px;
+}
+
+.person {
+  margin-top: 30px;
+}
+
+.person-img:hover {
+  cursor: pointer;
+}
+
+.social {
+  margin-top: 10px;
+}
+
+.person-info {
+  color: grey;
+}
+
+.special-person-info,
+.special-person-name {
+  color: #000;
+  font-family: sans-serif;
+}
+
+.special-person-name {
+  font-weight: 600;
+}
+
+.person-info,
+.special-person-info {
+  text-transform: none;
+  max-width: 230px;
+  margin: 0 auto;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+.team-container img {
+  margin-bottom: 20px;
+}
+
+.loader {
+  padding-bottom: 50px;
+}
+
+/* Footer style properties */
+
+footer {
+  color: #fff;
+  background: url(../img/image13.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 650px;
+  background-blend-mode: multiply;
+  display: flex;
+  text-align: center;
+}
+
+.footer-cover {
+  background-image: url(../img/image12.png);
+  background-blend-mode: multiply;
+  height: 650px;
+  width: 100%;
+}
+
+.footer-container span {
+  padding-top: 100px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  line-height: 1.7em;
+  font-family: sans-serif;
+}
+
+.contacts {
+  margin-top: 80px;
+}
+
+.input {
+  width: 377px;
+  height: 35px;
+  margin-bottom: 30px;
+}
+
+.contacts .input:first-child {
+  float: left;
+  margin-right: 15px;
+}
+
+.message {
+  width: 785px;
+  height: 180px;
+  padding-top: 10px;
+  margin-bottom: 12px;
+}
+
+.input,
+.message {
+  border-radius: 7px;
+  padding-left: 15px;
+  border: 0px;
+  font-family: sans-serif;
+}
+
+footer button {
+  text-transform: uppercase;
+  color: #fff;
+  background-color: rgb(255, 106, 0);
+  border-radius: 7px;
+  width: 130px;
+  height: 30px;
+  font-size: 10px;
+  float: left;
+  border: 0px;
+}
+
+.footer-social-item {
+  width: 24px;
+  margin-left: 10px;
+  float: right;
+}
+
+.footer-social {
+  float: right;
+}
