@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zurumbia_11883", "Zurumbia_11883\Zurumbia_11883.csproj", "{4F01FEB8-B698-4AFE-AE90-BE7193F4D3C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zurumbia_11883.DAL", "Zurumbia_11883.DAL\Zurumbia_11883.DAL.csproj", "{606FBE8F-5D21-46BE-AF9E-78AA0D324634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F01FEB8-B698-4AFE-AE90-BE7193F4D3C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F01FEB8-B698-4AFE-AE90-BE7193F4D3C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F01FEB8-B698-4AFE-AE90-BE7193F4D3C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F01FEB8-B698-4AFE-AE90-BE7193F4D3C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{606FBE8F-5D21-46BE-AF9E-78AA0D324634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{606FBE8F-5D21-46BE-AF9E-78AA0D324634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{606FBE8F-5D21-46BE-AF9E-78AA0D324634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{606FBE8F-5D21-46BE-AF9E-78AA0D324634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5CEA495E-0FF1-41C5-B91C-AA34C2A08302}
+	EndGlobalSection
+EndGlobal

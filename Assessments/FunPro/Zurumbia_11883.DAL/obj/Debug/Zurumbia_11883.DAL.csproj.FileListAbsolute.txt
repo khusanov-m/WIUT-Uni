@@ -1,0 +1,45 @@
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.pdb
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.AssemblyReference.cache
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CoreCompileInputs.cache
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CopyComplete
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.pdb
+C:\Users\sarva\OneDrive\Desktop\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia-94b22df34d669aa40ab22e9e42543f0cc7968840\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll.config
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll.config
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.pdb
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.AssemblyReference.cache
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CoreCompileInputs.cache
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CopyComplete
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.dll
+C:\Users\sarva\OneDrive\Desktop\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.pdb
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll.config
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.pdb
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\bin\Debug\System.Data.SqlServerCe.dll
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.AssemblyReference.cache
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CoreCompileInputs.cache
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CopyComplete
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.dll
+D:\Zorumbia\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.pdb
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll.config
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.dll
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\bin\Debug\Zorumbia.DAL.pdb
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\bin\Debug\System.Data.SqlServerCe.dll
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.AssemblyReference.cache
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CoreCompileInputs.cache
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.csproj.CopyComplete
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.dll
+D:\Zorumbia For MySelf\Zorumbia\Zorumbia.DAL\obj\Debug\Zorumbia.DAL.pdb
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\bin\Debug\Zurumbia_11883.DAL.dll.config
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\bin\Debug\Zurumbia_11883.DAL.dll
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\bin\Debug\Zurumbia_11883.DAL.pdb
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\obj\Debug\Zurumbia_11883.DAL.csproj.AssemblyReference.cache
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\obj\Debug\Zurumbia_11883.DAL.csproj.CoreCompileInputs.cache
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\obj\Debug\Zurumbia_11883.DAL.csproj.CopyComplete
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\obj\Debug\Zurumbia_11883.DAL.dll
+C:\Users\user\Desktop\FunPro.CW2.11883\not my\Zorumbia\Zurumbia_11883.DAL\obj\Debug\Zurumbia_11883.DAL.pdb
