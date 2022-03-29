@@ -1,0 +1,202 @@
+@import "./styles/font.css";
+@import "./styles/base.css";
+@import "./styles/variables.css";
+@import "./styles/header.css";
+@import "./styles/themeChanger.css";
+
+html {
+  overflow: hidden;
+}
+
+body {
+  cursor: url("./assets/music/volume_off.png"), default;
+}
+
+header {
+  margin-bottom: 0;
+}
+
+.carousel {
+  position: absolute;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.cover img {
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100vw;
+  height: 100vh;
+
+  -webkit-filter: brightness(0.9);
+  filter: brightness(0.9);
+
+  -o-object-fit: cover;
+  object-fit: cover;
+  display: block;
+}
+
+.cover.hide {
+  -webkit-animation: hide 2.2s linear;
+  animation: hide 2.2s linear;
+}
+
+.cover.show {
+  -webkit-animation: show 2s linear;
+  animation: show 2s linear;
+}
+
+.nav ul {
+  background: transparent;
+  -webkit-backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
+}
+
+.credentials {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 1;
+
+  background: var(--color-secondary);
+
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+
+  padding: 2.5rem;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.credentials__title {
+  color: var(--color-primary);
+  font-size: 3rem;
+  text-align: center;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+    top: -50%;
+  }
+
+  85% {
+    opacity: 1;
+    top: 65%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    top: -50%;
+  }
+
+  85% {
+    opacity: 1;
+    top: 65%;
+  }
+
+  100% {
+    top: 50%;
+  }
+}
+
+@-webkit-keyframes hideCred {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes hideCred {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes hide {
+  0% {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+
+  100% {
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+
+  100% {
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+  }
+}
+
+@-webkit-keyframes show {
+  0% {
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+  }
+
+  100% {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+}
+
+@keyframes show {
+  0% {
+    -webkit-filter: brightness(0);
+    filter: brightness(0);
+  }
+
+  100% {
+    -webkit-filter: brightness(0.9);
+    filter: brightness(0.9);
+  }
+}

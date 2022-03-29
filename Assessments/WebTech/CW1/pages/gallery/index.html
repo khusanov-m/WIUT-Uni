@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valorant</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="shortcut icon"
+      href="https://playvalorant.com/static/favicon-32x32.940d18fe.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__list--item">
+            <a href="../../index.html"
+              ><img
+                src="../../assets/main/logotype.png"
+                alt="logotype"
+                class="valorant__logo"
+            /></a>
+          </li>
+          <li class="nav__list--item">
+            <a href="https://playvalorant.com/en-us/">Game</a>
+          </li>
+          <li class="nav__list--item">
+            <a href="../characters/index.html">Characters</a>
+          </li>
+          <li class="nav__list--item"><a href="../news/index.html">News</a></li>
+          <li class="nav__list--item">
+            <a href="../weapons/index.html">Weapons</a>
+          </li>
+          <li class="nav__list--item"><a href="../shop/index.html">Shop</a></li>
+          <li class="nav__list--item">
+            <a href="./index.html">Gallery</a>
+          </li>
+
+          <li class="nav__list--item">
+            <label id="switch" class="switch">
+              <input type="checkbox" id="slider" />
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mobile__nav--activator" id="burger__activator">
+        <span class="burger__decor"></span>
+      </div>
+
+      <nav class="mobile__nav" id="mobile__nav">
+        <ul class="mobile__nav__list">
+          <li class="mobile__nav__list--item">
+            <a href="../../index.html"
+              ><img
+                src="../../assets/main/logotype.png"
+                alt="logotype"
+                class="valorant__logo"
+            /></a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="https://playvalorant.com/en-us/">Game</a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="../characters/index.html">Characters</a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="../news/index.html">News</a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="../weapons/index.html">Weapons</a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="../shop/index.html">Shop</a>
+          </li>
+          <li class="mobile__nav__list--item">
+            <a href="./index.html">Gallery</a>
+          </li>
+
+          <li class="mobile__nav__list--item">
+            <label id="switch" class="switch">
+              <input type="checkbox" id="slider" />
+              <span class="slider round"></span>
+            </label>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="gallery" id="gallery">
+      <h1 class="gallery__title">
+        It's Showtime to Present Juicy Elements of the Game
+      </h1>
+      <div class="gallery__filter">
+        <p class="gallery__filter--item active" id="all">All</p>
+        <p class="gallery__filter--item" id="characters-filter">Characters</p>
+        <p class="gallery__filter--item" id="wallpapers-filter">Wallpapers</p>
+        <p class="gallery__filter--item" id="skins-filter">Weapon Skins</p>
+        <p class="gallery__filter--item" id="maps-filter">Maps</p>
+      </div>
+
+      <div class="gallery__item" id="gallery__item">
+        <div class="gallery__container" id="gallery__container">
+          <div class="container agents__container" id="agents"></div>
+          <div class="container wallpapers__container" id="wallpapers"></div>
+          <div class="container skins__container" id="skins"></div>
+          <div class="container maps__container" id="maps"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../../functions/themeChanger.js" defer></script>
+    <script src="../../functions/burger.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
