@@ -1,6 +1,6 @@
 import express from 'express';
-
 import routes from './routes';
+import path from 'path';
 
 import { initMiddlewares, errorHandler } from './middlewares';
 
@@ -8,7 +8,7 @@ const app: express.Application = express();
 
 initMiddlewares(app);
 
-app.use('/api/v1', routes);
+app.use('/', routes);
 
 app.use('*', (req, res) => {
   res.status(404).send('404 Not Found');

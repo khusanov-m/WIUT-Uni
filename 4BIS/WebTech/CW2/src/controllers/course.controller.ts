@@ -6,12 +6,10 @@ export const getAllCourses = async (req: Request, res: Response) => {
   try {
     const courses = await Course.find({});
 
-    res.status(200).json({
+    res.render('index', {
       status: 'success',
       result: courses.length,
-      data: {
-        courses,
-      },
+      courses: courses,
     });
   } catch (err) {
     throw {
