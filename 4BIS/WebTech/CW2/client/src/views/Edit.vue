@@ -213,11 +213,6 @@ export default {
       form.title = this.title;
       form.isFavorite = this.isFavorite;
 
-      console.log("========this.isFavorite=========");
-      console.log(this.isFavorite);
-      console.log(this.courses.isFavorite);
-      console.log("========this.isFavorite=========");
-
       if (
         form.author &&
         form.coverImg &&

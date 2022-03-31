@@ -102,7 +102,7 @@
           fields[6].tip
         }}</label>
         <input
-          :type="fields[6].text"
+          type="checkbox"
           :placeholder="fields[6].example"
           :id="fields[6].purpose"
           v-model="isFavorite"
@@ -196,7 +196,9 @@ export default {
       form.duration = this.duration;
       form.price = this.price;
       form.title = this.title;
-      form.isFavourite = this.isFavorite;
+      form.isFavorite = this.isFavorite;
+
+      console.log(form);
 
       if (
         form.author &&

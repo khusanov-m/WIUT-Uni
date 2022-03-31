@@ -1,16 +1,18 @@
 <template>
   <div class="home">
-    <section class="courses-container">
+    <section class="courses-container" v-if="courses.length">
       <div class="courses__card" v-for="course in courses">
         <div class="courses__card-img">
           <img :src="course.coverImg" alt="course cover page" />
         </div>
         <div class="courses__card-info">
-          <h3 class="courses__card-title">{{ course.title }}</h3>
-          <p class="courses__card-author">{{ course.author }}</p>
-          <p class="courses__card-price">{{ course.price }}</p>
-          <p class="courses__card-duration">{{ course.duration }}</p>
-          <p class="courses__card-description">{{ course.description }}</p>
+          <h3 class="courses__card-title">Title: {{ course.title }}</h3>
+          <p class="courses__card-author">Author: {{ course.author }}</p>
+          <p class="courses__card-price">Price: {{ course.price }}</p>
+          <p class="courses__card-duration">Duration: {{ course.duration }}</p>
+          <p class="courses__card-description">
+            Description: {{ course.description }}
+          </p>
           <button @click="toggleFavorite(course._id)">
             <i
               v-if="course.isFavorite"
@@ -25,6 +27,12 @@
             <i class="fa-solid fa-trash"></i>
           </button>
         </div>
+      </div>
+    </section>
+    <section v-else>
+      <div class="courses__card">
+        <h3 class="courses__card-title">No courses in the records</h3>
+        <router-link to="/create">Let's add the new one</router-link>
       </div>
     </section>
   </div>
