@@ -1,12 +1,31 @@
 <template>
   <div class="form__input">
     <label :for="purpose" v-if="tip">{{ tip }}</label>
-    <input :type="text" :placeholder="example" :id="purpose" :value="init" />
+    <input
+      :type="text"
+      :placeholder="example"
+      :id="purpose"
+      :value="init"
+      :checked="boolean"
+      :v-model="bind"
+    />
   </div>
 </template>
 
-<script>
+<script lang="ts">
+// https://vuejs.org/guide/components/events.html#usage-with-v-model
 export default {
+  data() {
+    return {
+      author: "",
+      coverImg: "",
+      description: "",
+      duration: "",
+      price: "",
+      title: "",
+      isFavorite: false,
+    };
+  },
   props: {
     purpose: {
       type: String,
@@ -27,6 +46,18 @@ export default {
       type: String,
       default: "",
     },
+    boolean: {
+      type: Boolean,
+      default: false,
+    },
+    data: {
+      type: String,
+      default: "",
+    },
+    bind: {
+      type: String,
+      default: "",
+    }
   },
 };
 </script>
