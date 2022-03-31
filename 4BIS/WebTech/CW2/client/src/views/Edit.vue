@@ -1,6 +1,8 @@
 <template lang="">
   <div>
-    <router-link to="/">Go Back</router-link>
+    <router-link to="/">
+      <i class="fa-solid fa-chevron-left"></i>Go Back</router-link
+    >
     <p>EDIT</p>
 
     <form>
@@ -15,6 +17,10 @@
         :boolean="checkChecked(value)"
         :data="name"
       ></base-input> -->
+      <img :src="previewUrl" alt="Preview Place Holder" />
+      <button @click.prevent="displayPreview()">
+        Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
+      </button>
 
       <div class="edit__input">
         <label for="author">{{ setLabel("author") }}</label>
@@ -81,11 +87,10 @@
         <input v-model="isFavorite" type="checkbox" id="isFavorite" />
       </div>
 
-      <input
-        type="submit"
-        value="Update Course Details"
-        @click.prevent="upload()"
-      />
+      <button @click.prevent="upload()">
+        Update <i class="fa-solid fa-cloud-arrow-up"></i>
+      </button>
+      
     </form>
   </div>
 </template>
@@ -102,6 +107,7 @@ export default {
       price: "",
       title: "",
       isFavorite: false,
+      previewUrl: "",
     };
   },
   methods: {
@@ -230,8 +236,7 @@ export default {
     },
     async setValues() {
       this.courses = await this.getCourse();
-      console.log(this.courses);
-
+      this.previewUrl = this.courses.coverImg;
       this.author = this.courses.author;
       this.title = this.courses.title;
       this.description = this.courses.description;
@@ -239,6 +244,9 @@ export default {
       this.price = this.courses.price;
       this.duration = this.courses.duration;
       this.isFavorite = this.courses.isFavorite;
+    },
+    displayPreview() {
+      this.previewUrl = this.coverImg;
     },
   },
 

@@ -14,6 +14,11 @@
         />
       </div> -->
 
+      <img :src="previewUrl" alt="Preview Place Holder" />
+      <button @click.prevent="displayPreview()">
+        Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
+      </button>
+
       <div class="form__input">
         <label :for="fields[0].purpose" v-if="fields[0].tip">{{
           fields[0].tip
@@ -105,7 +110,9 @@
         />
       </div>
 
-      <input type="submit" value="Create" @click.prevent="create" />
+      <button @click.prevent="create">
+        Create <i class="fa-solid fa-folder-plus"></i>
+      </button>
     </form>
   </div>
 </template>
@@ -121,6 +128,8 @@ export default {
       price: "",
       title: "",
       isFavorite: false,
+      previewUrl:
+        "https://images.unsplash.com/photo-1518186233392-c232efbf2373?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
       fields: [
         {
           tip: "Title",
@@ -176,6 +185,9 @@ export default {
     };
   },
   methods: {
+    displayPreview() {
+      this.previewUrl = this.coverImg;
+    },
     async create() {
       const form = {};
       form.author = this.author;

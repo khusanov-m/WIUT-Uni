@@ -11,11 +11,19 @@
           <p class="courses__card-price">{{ course.price }}</p>
           <p class="courses__card-duration">{{ course.duration }}</p>
           <p class="courses__card-description">{{ course.description }}</p>
-          <p class="courses__card-isFavorite">{{ course.isFavorite }}</p>
-
-          <button @click="editCourse(course._id)">Edit</button>
-          <button @click="deleteCourse(course._id)">Delete</button>
-          <span class="mdi mdi-home"></span>
+          <button @click="toggleFavorite(course._id)">
+            <i
+              v-if="course.isFavorite"
+              class="courses__card-isFavorite fa-solid fa-heart"
+            ></i>
+            <i v-else class="courses__card-isFavorite fa-regular fa-heart"></i>
+          </button>
+          <button class="icon icon__edit" @click="editCourse(course._id)">
+            <i class="fa-solid fa-pen-to-square"></i>
+          </button>
+          <button class="icon icon__delete" @click="deleteCourse(course._id)">
+            <i class="fa-solid fa-trash"></i>
+          </button>
         </div>
       </div>
     </section>
@@ -23,8 +31,6 @@
 </template>
 
 <script>
-import { defineComponent } from "vue";
-
 export default {
   name: "Home",
   data() {
@@ -38,7 +44,6 @@ export default {
       const result = await this.axios.get("/courses");
       const { data } = result;
       this.courses = data.courses;
-      console.log(this.courses);
     },
     async deleteCourse(id) {
       await this.axios.delete(`/courses/${id}`);
@@ -47,6 +52,17 @@ export default {
     },
     async editCourse(id) {
       this.$router.push(`/edit/${id}`);
+    },
+    async toggleFavorite(id) {
+      const result = await this.axios.get(`/courses/${id}`);
+      const {
+        data: { data },
+      } = result;
+      const isFav = data.courses.isFavorite;
+      await this.axios.put(`/courses/${id}`, {
+        isFavorite: !isFav,
+      });
+      this.getAllCourses();
     },
   },
   mounted() {

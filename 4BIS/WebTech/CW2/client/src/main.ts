@@ -15,9 +15,6 @@ app.component("BaseInput", BaseInput);
 // SASS Styles //
 import "@/styles/style.scss";
 
-// Icons //
-import "material-design-icons-iconfont/dist/material-design-icons.css";
-
 axios.defaults.baseURL = "http://localhost:5000/api/v1/";
 
 app.use(router).use(VueAxios, axios).mount("#app");
