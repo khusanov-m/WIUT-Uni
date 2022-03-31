@@ -6,7 +6,7 @@ export const getAllCourses = async (req: Request, res: Response) => {
   try {
     const courses = await Course.find({});
 
-    res.render('index', {
+    res.status(200).json({
       status: 'success',
       result: courses.length,
       courses: courses,
@@ -41,10 +41,6 @@ export const getCourse = async (req: Request, res: Response) => {
 
 export const createCourse = async (req: Request, res: Response) => {
   try {
-    console.log('====================================');
-    console.log(req.body);
-    console.log('====================================');
-
     const newCourse = await Course.create(req.body);
 
     res.status(201).json({
@@ -90,6 +86,23 @@ export const deleteCourse = async (req: Request, res: Response) => {
     res.status(200).json({
       status: 'success',
       data: null,
+    });
+  } catch (err) {
+    res.status(404).json({
+      status: 'fail',
+      message: err,
+    });
+  }
+};
+
+export const getFavs = async (req: Request, res: Response) => {
+  try {
+    const favs = await Course.find({ isFavorite: true });
+    console.log(favs);
+
+    res.status(200).json({
+      status: 'success',
+      data: favs,
     });
   } catch (err) {
     res.status(404).json({
