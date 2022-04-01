@@ -2,7 +2,7 @@
   <div class="favs">
     <p>FAVOURITES</p>
     <section class="favs-container">
-      <div class="favs__card" v-for="fav in favs">
+      <div class="favs__card" v-for="fav in favs" :key="fav._id">
         <div class="favs__card-img">
           <img :src="fav.coverImg" alt="fav cover page" />
         </div>

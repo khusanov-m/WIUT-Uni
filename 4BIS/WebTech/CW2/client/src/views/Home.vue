@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <section class="courses-container" v-if="courses.length">
-      <div class="courses__card" v-for="course in courses">
+      <div class="courses__card" v-for="course in courses" :key="course._id">
         <div class="courses__card-img">
           <img :src="course.coverImg" alt="course cover page" />
         </div>
