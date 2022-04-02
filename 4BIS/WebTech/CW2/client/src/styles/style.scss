@@ -39,6 +39,7 @@ img {
 
 a {
   text-decoration: none;
+  transition: transform 0.1s ease-in-out;
 }
 
 li {
@@ -80,6 +81,10 @@ button {
   &:active {
     transform: scale(0.95);
   }
+}
+
+a:active {
+  transform: scale(0.95);
 }
 
 input::-webkit-input-placeholder,

@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>All Courses</h1>
+    <h1>{{ getHeading(courses.length) }}</h1>
     <section class="container courses-container" v-if="courses.length">
       <div class="courses__card" v-for="course in courses" :key="course._id">
         <div class="courses__card-img">
@@ -40,9 +40,11 @@
       </div>
     </section>
     <section v-else>
-      <div class="courses__card">
-        <h3 class="courses__card-title">No courses in the records</h3>
-        <router-link to="/create">Let's add the new one</router-link>
+      <div class="courses__card courses__card-no">
+        <h3 class="courses__card-title"></h3>
+        <router-link to="/create"
+          >Let's add the new one <i class="fa-solid fa-arrow-right-long"></i
+        ></router-link>
       </div>
     </section>
   </div>
@@ -58,6 +60,9 @@ export default {
     };
   },
   methods: {
+    getHeading(length) {
+      return length ? "All Courses" : "No courses in the records";
+    },
     async getAllCourses() {
       const result = await this.axios.get("/courses");
       const { data } = result;
@@ -90,4 +95,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "@/styles/variables.scss";
+
+.courses__card {
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $font-color-01;
+    padding: 1rem 2rem;
+    border-radius: 1.5rem;
+    margin: 0 auto;
+
+    i {
+      margin-left: 1.5rem;
+    }
+  }
+
+  &-no {
+    min-height: 65.9vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
