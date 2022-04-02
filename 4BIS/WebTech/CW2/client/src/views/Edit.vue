@@ -220,7 +220,6 @@ export default {
       if (!this.author) this.errors.push("Author");
       if (!this.title) this.errors.push("Title");
       if (!this.description) this.errors.push("Description");
-      if (!this.coverImg) this.errors.push("Cover Image URL");
       if (!this.price) this.errors.push("Price");
       if (!this.duration) this.errors.push("Duration");
 
@@ -231,7 +230,6 @@ export default {
 
       if (
         form.author &&
-        form.coverImg &&
         form.description &&
         form.duration &&
         form.price &&

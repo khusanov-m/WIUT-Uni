@@ -15,8 +15,10 @@ const courseSchema = new mongoose.Schema(
     },
     coverImg: {
       type: String,
-      required: [true, 'Course must have an image'],
+      required: false,
       trim: true,
+      default:
+        'https://www.kindpng.com/picc/m/318-3180572_online-course-icon-hd-png-download.png',
     },
     author: {
       type: String,
