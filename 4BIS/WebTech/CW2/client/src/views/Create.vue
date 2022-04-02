@@ -223,6 +223,9 @@ export default {
       if (!this.description) this.errors.push("Description");
       if (!this.price) this.errors.push("Price");
       if (!this.duration) this.errors.push("Duration");
+      if (!this.coverImg)
+        form.coverImg =
+          "http://www.herokucdn.com/error-pages/application-error.html";
 
       if (this.errors.length) {
         this.displayErrors();
