@@ -7,8 +7,9 @@
   "scripts": {
     "dev": "nodemon --watch './**/*.ts' --exec 'ts-node' src/server.ts",
     "dev:start": "ts-node src/server.ts",
-    "start": "nodemon src/server.ts",
-    "pug": "yarn prettier --write '**/*.pug'"
+    "ts-start": "nodemon src/server.ts",
+    "start": "nodemon dist/server.js",
+    "build": "tsc"
   },
   "dependencies": {
     "axios": "^0.26.1",

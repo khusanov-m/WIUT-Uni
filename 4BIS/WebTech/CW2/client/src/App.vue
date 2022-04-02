@@ -16,10 +16,6 @@ export default {
 <style lang="scss">
 @import "@/styles/variables.scss";
 
-#app {
-  
-}
-
 a {
   font-weight: 400;
   color: $font-color-04;
