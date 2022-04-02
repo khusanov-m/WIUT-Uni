@@ -97,25 +97,5 @@ export default {
 <style lang="scss" scoped>
 @import "@/styles/variables.scss";
 
-.courses__card {
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $font-color-01;
-    padding: 1rem 2rem;
-    border-radius: 1.5rem;
-    margin: 0 auto;
 
-    i {
-      margin-left: 1.5rem;
-    }
-  }
-
-  &-no {
-    min-height: 65.9vh;
-    display: flex;
-    flex-direction: column;
-  }
-}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="courses">
-    <h1>Favourites</h1>
-    <section class="container courses-container">
+    <h1>{{ getHeading(favs.length) }}</h1>
+    <section class="container courses-container" v-if="favs.length">
       <div class="courses__card" v-for="fav in favs" :key="fav._id">
         <div class="courses__card-img">
           <img :src="fav.coverImg" alt="fav cover page" />
@@ -30,6 +30,14 @@
         </div>
       </div>
     </section>
+    <section v-else>
+      <div class="courses__card courses__card-no">
+        <h3 class="courses__card-title"></h3>
+        <router-link to="/"
+          >Let's add to Favs some Courses <i class="fa-solid fa-arrow-right-long"></i
+        ></router-link>
+      </div>
+    </section>
   </div>
 </template>
 <script>
@@ -40,6 +48,11 @@ export default {
     };
   },
   methods: {
+    getHeading(length) {
+      return length
+        ? `Favourites`
+        : "You don't have any favourite courses";
+    },
     async getFavsCourse() {
       const result = await this.axios.get("/courses/favs");
       const {
@@ -64,5 +77,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>
