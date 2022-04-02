@@ -218,14 +218,17 @@ export default {
       form.duration = this.duration;
       form.isFavorite = this.isFavorite;
 
+      form.coverImg = this.coverImg
+        ? this.coverImg
+        : "https://www.kindpng.com/picc/m/318-3180572_online-course-icon-hd-png-download.png";
+
+
       if (!this.author) this.errors.push("Author");
       if (!this.title) this.errors.push("Title");
       if (!this.description) this.errors.push("Description");
       if (!this.price) this.errors.push("Price");
       if (!this.duration) this.errors.push("Duration");
-      if (!this.coverImg)
-        form.coverImg =
-          "http://www.herokucdn.com/error-pages/application-error.html";
+
 
       if (this.errors.length) {
         this.displayErrors();
