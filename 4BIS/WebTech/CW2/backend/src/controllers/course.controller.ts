@@ -98,7 +98,6 @@ export const deleteCourse = async (req: Request, res: Response) => {
 export const getFavs = async (req: Request, res: Response) => {
   try {
     const favs = await Course.find({ isFavorite: true });
-    console.log(favs);
 
     res.status(200).json({
       status: 'success',

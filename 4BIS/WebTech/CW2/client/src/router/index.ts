@@ -4,12 +4,17 @@ import Home from "@/views/Home.vue";
 import Create from "@/views/Create.vue";
 import Edit from "@/views/Edit.vue";
 import Favourite from "@/views/Favourite.vue";
+import Error from "@/views/Error.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Home",
     component: Home,
+  },
+  {
+    path: "/home",
+    redirect: "/",
   },
   {
     path: "/edit/:id",
@@ -22,12 +27,26 @@ const routes: Array<RouteRecordRaw> = [
     component: Create,
   },
   {
+    path: "/add",
+    redirect: "/create",
+  },
+  {
     path: "/favourite",
     name: "Favourite",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Favourite,
+  },
+  {
+    path: "/fav",
+    redirect: "/favourite",
+  },
+  {
+    path: "/favs",
+    redirect: "/favourite",
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "Not Found",
+    component: Error,
   },
 ];
 

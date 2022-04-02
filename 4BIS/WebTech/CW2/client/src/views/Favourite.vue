@@ -1,28 +1,32 @@
 <template>
-  <div class="favs">
-    <p>FAVOURITES</p>
-    <section class="favs-container">
-      <div class="favs__card" v-for="fav in favs" :key="fav._id">
-        <div class="favs__card-img">
+  <div class="courses">
+    <h1>Favourites</h1>
+    <section class="container courses-container">
+      <div class="courses__card" v-for="fav in favs" :key="fav._id">
+        <div class="courses__card-img">
           <img :src="fav.coverImg" alt="fav cover page" />
         </div>
-        <div class="favs__card-info">
-          <h3 class="favs__card-title">Title: {{ fav.title }}</h3>
-          <p class="favs__card-author">Author: {{ fav.author }}</p>
-          <p class="favs__card-price">Price: {{ fav.price }}</p>
-          <p class="favs__card-duration">Duration: {{ fav.duration }}</p>
-          <p class="favs__card-description">
-            Description: {{ fav.description }}
-          </p>
-          <button @click="toggleFavorite(fav._id)">
-            <i class="favs__card-isFavorite fa-solid fa-heart"></i>
-          </button>
-          <button class="icon icon__edit" @click="editCourse(fav._id)">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="icon icon__delete" @click="deleteCourse(fav._id)">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+        <h3 class="courses__card-title">{{ fav.title }}</h3>
+        <div class="courses__card-info">
+          <div class="courses__card-details">
+            <p class="courses__card-author">Author: {{ fav.author }}</p>
+            <p class="courses__card-price">Price: {{ fav.price }}</p>
+            <p class="courses__card-duration">Duration: {{ fav.duration }}</p>
+            <p class="courses__card-description">
+              Description: {{ fav.description }}
+            </p>
+          </div>
+          <div class="courses__card-btns">
+            <button @click="toggleFavorite(fav._id)">
+              <i class="courses__card-isFavorite fa-solid fa-heart"></i>
+            </button>
+            <button class="icon icon__edit" @click="editCourse(fav._id)">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="icon icon__delete" @click="deleteCourse(fav._id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -60,4 +64,5 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style lang="scss" scoped>
+</style>

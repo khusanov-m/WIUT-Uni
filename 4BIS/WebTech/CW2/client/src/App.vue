@@ -5,33 +5,28 @@
 </template>
 
 <script>
-import DefaultLayout from '@/layouts/Default.vue'
+import DefaultLayout from "@/layouts/Default.vue";
 export default {
   components: {
-    DefaultLayout
-  }
-}
+    DefaultLayout,
+  },
+};
 </script>
 
 <style lang="scss">
+@import "@/styles/variables.scss";
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  
 }
 
-#nav {
-  padding: 30px;
+a {
+  font-weight: 400;
+  color: $font-color-04;
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+  &.router-link-exact-active {
+    font-weight: 600;
+    color: $font-color-07;
   }
 }
 </style>

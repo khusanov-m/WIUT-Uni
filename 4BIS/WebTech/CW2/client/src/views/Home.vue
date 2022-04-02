@@ -1,31 +1,41 @@
 <template>
   <div class="home">
-    <section class="courses-container" v-if="courses.length">
+    <h1>All Courses</h1>
+    <section class="container courses-container" v-if="courses.length">
       <div class="courses__card" v-for="course in courses" :key="course._id">
         <div class="courses__card-img">
           <img :src="course.coverImg" alt="course cover page" />
         </div>
+        <h3 class="courses__card-title">{{ course.title }}</h3>
         <div class="courses__card-info">
-          <h3 class="courses__card-title">Title: {{ course.title }}</h3>
-          <p class="courses__card-author">Author: {{ course.author }}</p>
-          <p class="courses__card-price">Price: {{ course.price }}</p>
-          <p class="courses__card-duration">Duration: {{ course.duration }}</p>
-          <p class="courses__card-description">
-            Description: {{ course.description }}
-          </p>
-          <button @click="toggleFavorite(course._id)">
-            <i
-              v-if="course.isFavorite"
-              class="courses__card-isFavorite fa-solid fa-heart"
-            ></i>
-            <i v-else class="courses__card-isFavorite fa-regular fa-heart"></i>
-          </button>
-          <button class="icon icon__edit" @click="editCourse(course._id)">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </button>
-          <button class="icon icon__delete" @click="deleteCourse(course._id)">
-            <i class="fa-solid fa-trash"></i>
-          </button>
+          <div class="courses__card-details">
+            <p class="courses__card-author">Author: {{ course.author }}</p>
+            <p class="courses__card-price">Price: ${{ course.price }}</p>
+            <p class="courses__card-duration">
+              Duration: {{ course.duration }} hours
+            </p>
+            <p class="courses__card-description">
+              Description: {{ course.description }}
+            </p>
+          </div>
+          <div class="courses__card-btns">
+            <button @click="toggleFavorite(course._id)">
+              <i
+                v-if="course.isFavorite"
+                class="courses__card-isFavorite fa-solid fa-heart"
+              ></i>
+              <i
+                v-else
+                class="courses__card-isFavorite fa-regular fa-heart"
+              ></i>
+            </button>
+            <button class="icon icon__edit" @click="editCourse(course._id)">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+            <button class="icon icon__delete" @click="deleteCourse(course._id)">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
         </div>
       </div>
     </section>
@@ -78,3 +88,6 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+</style>

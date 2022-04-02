@@ -6,12 +6,6 @@ import VueAxios from "vue-axios";
 
 const app = createApp(App);
 
-// Slots //
-import BaseInput from "@/components/ui/BaseInput.vue";
-
-// Slots Component //
-app.component("BaseInput", BaseInput);
-
 // SASS Styles //
 import "@/styles/style.scss";
 

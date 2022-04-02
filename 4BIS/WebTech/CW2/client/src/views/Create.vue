@@ -1,7 +1,7 @@
-<template lang="">
-  <div>
-    <p>CREATE</p>
-    <form>
+<template>
+  <div class="container">
+    <h1>Add to your list new Course</h1>
+    <form class="preview">
       <!-- <div class="form__input" v-for="field in fields">
         <label :for="purpose" v-if="tip">{{ tip }}</label>
         <input
@@ -13,68 +13,72 @@
           :v-model="bind"
         />
       </div> -->
+      <div class="form__preview">
+        <img :src="previewUrl" alt="Preview Place Holder" />
+        <button @click.prevent="displayPreview()">
+          Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
+        </button>
+      </div>
 
-      <img :src="previewUrl" alt="Preview Place Holder" />
-      <button @click.prevent="displayPreview()">
-        Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
-      </button>
+      <h3>Please fill the form</h3>
 
       <div class="form__input">
-        <label :for="fields[0].purpose" v-if="fields[0].tip">{{
-          fields[0].tip
-        }}</label>
+        <label :for="fields[0].purpose" v-if="fields[0].tip"
+          >{{ fields[0].tip }}:</label
+        >
         <input
           :type="fields[0].text"
           :placeholder="fields[0].example"
           :id="fields[0].purpose"
-          v-model="title"
-          required
-        />
-      </div>
-
-      <div class="form__input">
-        <label :for="fields[1].purpose" v-if="fields[1].tip">{{
-          fields[1].tip
-        }}</label>
-        <input
-          :type="fields[1].text"
-          :placeholder="fields[1].example"
-          :id="fields[1].purpose"
-          v-model="description"
-          required
-        />
-      </div>
-
-      <div class="form__input">
-        <label :for="fields[2].purpose" v-if="fields[2].tip">{{
-          fields[2].tip
-        }}</label>
-        <input
-          :type="fields[2].text"
-          :placeholder="fields[2].example"
-          :id="fields[2].purpose"
-          v-model="coverImg"
-          required
-        />
-      </div>
-
-      <div class="form__input">
-        <label :for="fields[3].purpose" v-if="fields[3].tip">{{
-          fields[3].tip
-        }}</label>
-        <input
-          :type="fields[3].text"
-          :placeholder="fields[3].example"
-          :id="fields[3].purpose"
           v-model="author"
           required
         />
       </div>
 
       <div class="form__input">
-        <label :for="fields[4].purpose" v-if="fields[4].tip">{{
-          fields[4].tip
-        }}</label>
+        <label :for="fields[1].purpose" v-if="fields[1].tip"
+          >{{ fields[1].tip }}:</label
+        >
+        <textarea
+          :type="fields[1].text"
+          :placeholder="fields[1].example"
+          :id="fields[1].purpose"
+          v-model="title"
+          required
+          contenteditable="true"
+        ></textarea>
+      </div>
+
+      <div class="form__input">
+        <label :for="fields[2].purpose" v-if="fields[2].tip"
+          >{{ fields[2].tip }}:</label
+        >
+        <textarea
+          :type="fields[2].text"
+          :placeholder="fields[2].example"
+          :id="fields[2].purpose"
+          v-model="description"
+          required
+        ></textarea>
+      </div>
+
+      <div class="form__input">
+        <label :for="fields[3].purpose" v-if="fields[3].tip"
+          >{{ fields[3].tip }}:</label
+        >
+        <input
+          :type="fields[3].text"
+          :placeholder="fields[3].example"
+          :id="fields[3].purpose"
+          v-model="coverImg"
+          required
+        />
+      </div>
+
+      <div class="form__input">
+        <label :for="fields[4].purpose" v-if="fields[4].tip"
+          >{{ fields[4].tip }}:</label
+        >
         <input
           :type="fields[4].text"
           :placeholder="fields[4].example"
@@ -85,9 +89,9 @@
       </div>
 
       <div class="form__input">
-        <label :for="fields[5].purpose" v-if="fields[5].tip">{{
-          fields[5].tip
-        }}</label>
+        <label :for="fields[5].purpose" v-if="fields[5].tip"
+          >{{ fields[5].tip }}:</label
+        >
         <input
           :type="fields[5].text"
           :placeholder="fields[5].example"
@@ -101,16 +105,24 @@
         <label :for="fields[6].purpose" v-if="fields[6].tip">{{
           fields[6].tip
         }}</label>
-        <input
-          type="checkbox"
-          :placeholder="fields[6].example"
-          :id="fields[6].purpose"
-          v-model="isFavorite"
-          required
-        />
+        <label class="switch">
+          <input
+            type="checkbox"
+            :placeholder="fields[6].example"
+            :id="fields[6].purpose"
+            v-model="isFavorite"
+            required
+          />
+          <span class="slider round"></span>
+        </label>
       </div>
 
-      <button @click.prevent="create">
+      <p v-if="errors.length" class="errorHandling">
+        Please fill the following required fields:
+        <span>{{ errorMessage }}</span>
+      </p>
+
+      <button class="form__btn" @click.prevent="create">
         Create <i class="fa-solid fa-folder-plus"></i>
       </button>
     </form>
@@ -121,6 +133,8 @@
 export default {
   data() {
     return {
+      errors: [],
+      errorMessage: "",
       author: "",
       coverImg: "",
       description: "",
@@ -128,9 +142,15 @@ export default {
       price: "",
       title: "",
       isFavorite: false,
-      previewUrl:
-        "https://images.unsplash.com/photo-1518186233392-c232efbf2373?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      previewUrl: "",
       fields: [
+        {
+          tip: "Author",
+          purpose: "author",
+          text: "text",
+          example: "Jonas Schmedtmann",
+          bind: "author",
+        },
         {
           tip: "Title",
           purpose: "title",
@@ -147,21 +167,15 @@ export default {
           bind: "description",
         },
         {
-          tip: "Cover Image",
+          tip: "Cover Image URL",
           purpose: "coverImg",
           text: "text",
           example: "url.com/image.jpg",
           bind: "coverImg",
         },
+
         {
-          tip: "Author",
-          purpose: "author",
-          text: "text",
-          example: "Jonas Schmedtmann",
-          bind: "author",
-        },
-        {
-          tip: "Price ($)",
+          tip: "Price in USD",
           purpose: "price",
           text: "number",
           example: "199",
@@ -186,19 +200,35 @@ export default {
   },
   methods: {
     displayPreview() {
-      this.previewUrl = this.coverImg;
+      if (this.coverImg) {
+        this.previewUrl = this.coverImg;
+      }
+    },
+    displayErrors() {
+      this.errorMessage = this.errors.map((error) => error).join(", ");
     },
     async create() {
+      this.errors = [];
       const form = {};
       form.author = this.author;
-      form.coverImg = this.coverImg;
-      form.description = this.description;
-      form.duration = this.duration;
-      form.price = this.price;
       form.title = this.title;
+      form.description = this.description;
+      form.coverImg = this.coverImg;
+      form.price = this.price;
+      form.duration = this.duration;
       form.isFavorite = this.isFavorite;
 
-      console.log(form);
+      if (!this.author) this.errors.push("Author");
+      if (!this.title) this.errors.push("Title");
+      if (!this.description) this.errors.push("Description");
+      if (!this.coverImg) this.errors.push("Cover Image URL");
+      if (!this.price) this.errors.push("Price");
+      if (!this.duration) this.errors.push("Duration");
+
+      if (this.errors.length) {
+        this.displayErrors();
+        return;
+      }
 
       if (
         form.author &&
@@ -217,21 +247,38 @@ export default {
       }
     },
   },
+  mounted() {
+    const images = [
+      "https://images.unsplash.com/photo-1608501821300-4f99e58bba77?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1527049979667-990f1d0d8e7f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1517241034903-9a4c3ab12f00?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1581284974086-f0a9d7bae871?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "https://images.unsplash.com/photo-1517999144091-3d9dca6d1e43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=627&q=80",
+      "https://images.unsplash.com/photo-1513569771920-c9e1d31714af?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+      "https://images.unsplash.com/photo-1475257026007-0753d5429e10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+    ];
+    this.previewUrl = images[Math.floor(Math.random() * images.length)];
+  },
 };
 </script>
 
-<style lang="scss">
-.form__input {
-  display: flex;
-  align-items: center;
-  border: 2px solid rgba(255, 255, 255, 0.3);
+<style lang="scss" scoped>
+@import "@/styles/variables.scss";
 
-  &:not(:last-child) {
-    margin-bottom: 20px;
+.container {
+  flex-direction: column;
+
+  h1,
+  h3 {
+    text-align: center;
   }
 
-  label {
-    margin-right: 0.5rem;
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    margin-bottom: 1.5rem;
   }
 }
 </style>

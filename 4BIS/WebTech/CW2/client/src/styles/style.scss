@@ -1,2 +1,260 @@
-@import 'variables';
-@import 'font';
+@import "variables";
+@import "font";
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $font-color-07;
+  background-color: $bg-primary;
+  padding-top: 3rem;
+  transition: all 0.3s ease-in;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 110rem;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+img {
+  border-radius: 1rem;
+  border: 2px solid $white-smoke;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+i {
+  font-size: 1.6rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+img {
+  width: 48rem;
+  height: 27rem;
+  object-fit: cover;
+  background: $bg-secondary;
+}
+
+.fa-solid.fa-heart,
+.fa-regular.fa-heart {
+  color: $like;
+}
+.fa-trash,
+.fa-pen-to-square {
+  color: $font-color-07;
+}
+
+button {
+  background: $bg-tertiary;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.8rem;
+}
+
+.courses {
+  &__card {
+    margin: 3rem;
+
+    &-author,
+    &-price,
+    &-duration,
+    &-description,
+    &-card-title {
+      font-size: 1.6rem;
+      max-width: 35rem;
+    }
+
+    &-title {
+      text-align: center;
+      max-width: 47rem;
+      letter-spacing: 0.1rem;
+      margin: 0 auto;
+    }
+
+    &-info,
+    &-btns {
+      display: flex;
+    }
+
+    &-btns {
+      background-color: $bg-tertiary;
+      border-radius: 1rem;
+    }
+
+    &-info {
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+}
+
+.form {
+  &__preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+
+    img {
+      margin-bottom: 1.5rem;
+    }
+
+    button {
+      border-radius: 3rem;
+      width: 15rem;
+      color: $font-color-07;
+    }
+  }
+  &__input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 45rem;
+
+    textarea::-webkit-scrollbar {
+      display: none;
+    }
+
+    input,
+    textarea {
+      width: 60%;
+      border-radius: 3rem;
+      padding: 1rem 2rem;
+      font-size: 1.5rem;
+      color: $font-color-07;
+      background: $bg-tertiary;
+      border: 1px solid $bg-tertiary;
+      max-width: 30rem;
+      resize: none;
+
+      &:active,
+      &:focus {
+        outline: none;
+        border: 1px solid $font-color-04;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__btn {
+    display: flex;
+    margin: 0 auto;
+    color: $white-smoke;
+
+    i {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.errorHandling {
+  font-size: 2rem;
+  text-align: center;
+  margin: 0 auto 1rem;
+  max-width: 45rem;
+
+  span {
+    color: #a4133c;
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  & input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bg-tertiary;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: $white-smoke;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+input:checked {
+  & + .slider:before {
+    background-color: $bg-tertiary;
+    transform: translateX(2.6rem);
+  }
+
+  & + .slider {
+    background-color: $font-color-09;
+  }
+}
+
+.slider.round {
+  border-radius: 34px;
+
+  &:before {
+    border-radius: 50%;
+  }
+}

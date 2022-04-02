@@ -1,28 +1,19 @@
 <template lang="">
-  <div>
+  <div class="container">
     <router-link to="/">
       <i class="fa-solid fa-chevron-left"></i>Go Back</router-link
     >
-    <p>EDIT</p>
+    <h1>Edit Course Page</h1>
 
-    <form>
-      <!-- <base-input
-        v-for="(value, name, i) in courses"
-        :key="i"
-        :tip="setLabel(name)"
-        :purpose="value"
-        :text="checkType(value)"
-        :example="giveExample(name)"
-        :init="value"
-        :boolean="checkChecked(value)"
-        :data="name"
-      ></base-input> -->
-      <img :src="previewUrl" alt="Preview Place Holder" />
-      <button @click.prevent="displayPreview()">
-        Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
-      </button>
+    <form class="form">
+      <div class="form__preview">
+        <img :src="previewUrl" alt="Preview Place Holder" />
+        <button @click.prevent="displayPreview()">
+          Preview Image <i class="fa-solid fa-arrow-rotate-right"></i>
+        </button>
+      </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="author">{{ setLabel("author") }}</label>
         <input
           v-model="author"
@@ -32,27 +23,27 @@
         />
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="title">{{ setLabel("title") }}</label>
-        <input
+        <textarea
           v-model="title"
           :type="checkType(courses.title)"
           :placeholder="giveExample(courses.title)"
           id="title"
-        />
+        ></textarea>
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="description">{{ setLabel("description") }}</label>
-        <input
+        <textarea
           v-model="description"
           :type="checkType(courses.description)"
           :placeholder="giveExample(courses.description)"
           id="description"
-        />
+        ></textarea>
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="coverImg">{{ setLabel("coverImg") }}</label>
         <input
           v-model="coverImg"
@@ -62,7 +53,7 @@
         />
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="price">{{ setLabel("price") }}</label>
         <input
           v-model="price"
@@ -72,7 +63,7 @@
         />
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="duration">{{ setLabel("duration") }}</label>
         <input
           v-model="duration"
@@ -82,15 +73,22 @@
         />
       </div>
 
-      <div class="edit__input">
+      <div class="form__input">
         <label for="isFavorite">{{ setLabel("isFavorite") }}</label>
-        <input v-model="isFavorite" type="checkbox" id="isFavorite" />
+        <label class="switch">
+          <input v-model="isFavorite" type="checkbox" id="isFavorite" />
+          <span class="slider round"></span>
+        </label>
       </div>
 
-      <button @click.prevent="upload()">
+      <p v-if="errors.length" class="errorHandling">
+        Please fill the following required fields:
+        <span>{{ errorMessage }}</span>
+      </p>
+
+      <button class="form__btn" @click.prevent="upload()">
         Update <i class="fa-solid fa-cloud-arrow-up"></i>
       </button>
-      
     </form>
   </div>
 </template>
@@ -99,6 +97,8 @@
 export default {
   data() {
     return {
+      errors: [],
+      errorMessage: "",
       courses: [],
       author: "",
       coverImg: "",
@@ -181,7 +181,7 @@ export default {
           return "Author";
           break;
         case "Price":
-          return "Price ($)";
+          return "Price in USD";
           break;
         case "Duration":
           return "Duration (in hours)";
@@ -203,7 +203,11 @@ export default {
     toggleFavorite() {
       this.isFavorite = !this.isFavorite;
     },
+    displayErrors() {
+      this.errorMessage = this.errors.map((error) => error).join(", ");
+    },
     async upload() {
+      this.errors = [];
       const form = {};
       form.author = this.author;
       form.coverImg = this.coverImg;
@@ -212,6 +216,18 @@ export default {
       form.price = this.price;
       form.title = this.title;
       form.isFavorite = this.isFavorite;
+
+      if (!this.author) this.errors.push("Author");
+      if (!this.title) this.errors.push("Title");
+      if (!this.description) this.errors.push("Description");
+      if (!this.coverImg) this.errors.push("Cover Image URL");
+      if (!this.price) this.errors.push("Price");
+      if (!this.duration) this.errors.push("Duration");
+
+      if (this.errors.length) {
+        this.displayErrors();
+        return;
+      }
 
       if (
         form.author &&
@@ -251,4 +267,12 @@ export default {
 };
 </script>
 
-<style lang=""></style>
+<style lang="scss" scoped>
+.container {
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 3rem;
+}
+</style>
