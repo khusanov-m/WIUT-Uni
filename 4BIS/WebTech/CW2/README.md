@@ -86,17 +86,14 @@ Then, as compilation finishes, open the link from the client terminal
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.6.1",
-    "pug": "^3.0.2",
     "typescript": "^4.6.2"  
   },
   "devDependencies": {
-    "@prettier/plugin-pug": "^1.20.0",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",
     "@types/morgan": "^1.9.3",
     "@types/node": "^17.0.21",
     "@types/prettier": "^2.4.4",
-    "@types/pug": "^2.0.6",
     "ts-node": "^10.7.0"
   }
   ```
